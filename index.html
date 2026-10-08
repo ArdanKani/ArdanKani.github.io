@@ -82,6 +82,7 @@ nav ul a:hover{color:var(--mint)}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
 .tags span{font-size:.82rem;color:var(--c,var(--mint));border:1px solid var(--line);border-radius:4px;padding:.1rem .55rem}
 
+
 /* skills */
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1.2rem}
 .skills .box{padding:1.2rem 1.3rem}
@@ -250,16 +251,23 @@ footer{padding:1.8rem 0;text-align:center;color:var(--muted);font-size:.9rem;bor
         <div class="tags"><span>MATLAB</span><span>Weibull</span><span>Capacity factor</span></div>
       </article>
 
-      <article class="card panel mint">
-        <h3>Renewable Energy System and Microgrid Modeling</h3>
-        <p>Academic group project with a 4-person team: designed microgrid schedules, horizontal axis wind turbine (HAWT) mechanics and solar PV layouts.</p>
-        <div class="tags"><span>Microgrid</span><span>HAWT</span><span>Solar PV</span></div>
-      </article>
 
       <article class="card panel hydro">
         <h3>Feedback Control System Optimization</h3>
         <p>EEE 3718 project. Designed and simulated a lead compensator to improve settling time and overshoot, and visualized stability and step response in MATLAB and Simulink.</p>
         <div class="tags"><span>MATLAB</span><span>Simulink</span><span>Control</span></div>
+      </article>
+
+      <article class="card panel solar">
+        <h3>Solar and PV Projects</h3>
+        <p>Two projects from the Solar Energy Systems course. We used the f-chart method to estimate how much of a building's hot water load solar collectors can meet, and designed a grid-connected rooftop PV system in PVsyst.</p>
+        <div class="tags"><span>f-chart</span><span>PVsyst</span><span>Solar thermal</span></div>
+      </article>
+
+      <article class="card panel mint">
+        <h3>Optimization Projects</h3>
+        <p>Two microgrid dispatch projects in MATLAB. We formulated a nonlinear program and a mixed-integer linear program to minimize operating cost with PV, a battery, a generator and the grid.</p>
+        <div class="tags"><span>MATLAB</span><span>NLP</span><span>MILP</span></div>
       </article>
 
     </div>
