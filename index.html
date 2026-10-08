@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ardan Kani | Energy Systems Engineering</title>
+<meta name="description" content="Portfolio of Ardan Kani, Energy Systems Engineering student at Yaşar University focused on wind power and renewable energy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080c12; --bg2:#0b1119; --panel:#0f1722; --line:#1f2e40;
+  --text:#e8eef5; --muted:#8fa1b5;
+  --mint:#29e0a0; --wind:#4cc9f0; --solar:#ffb703; --hydro:#3a86ff;
+  --head:"Chakra Petch","Segoe UI",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Arial,sans-serif;
+  --cut:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.65;font-size:1.03rem;overflow-x:hidden;
+  background-image:linear-gradient(rgba(41,224,160,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(41,224,160,.035) 1px,transparent 1px);background-size:44px 44px}
+img,svg{max-width:100%}
+a{color:var(--mint)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--solar);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);line-height:1.18}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+section{padding:4.5rem 0}
+section:nth-of-type(even){background:rgba(11,17,25,.85)}
+h2{font-size:clamp(1.8rem,4.5vw,2.4rem);font-weight:700;margin-bottom:2rem;display:flex;align-items:center;gap:.9rem}
+h2::before{content:"";width:10px;height:1.6em;background:var(--mint);box-shadow:0 0 14px rgba(41,224,160,.7);clip-path:polygon(0 0,100% 0,100% 80%,0 100%)}
+p+p{margin-top:1rem}
+
+/* tech panel: cut corner + border */
+.panel{position:relative;background:var(--panel);border:1px solid var(--line);clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,var(--cut) 100%,0 calc(100% - var(--cut)))}
+
+header{position:sticky;top:0;z-index:20;background:rgba(8,12,18,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;min-height:58px}
+.logo{font-family:var(--head);font-weight:700;color:var(--text);text-decoration:none;font-size:1.2rem;letter-spacing:.02em}
+nav ul{display:flex;gap:1.4rem;list-style:none}
+nav ul a{color:var(--muted);text-decoration:none;font-weight:500}
+nav ul a:hover{color:var(--mint)}
+#menu{display:none;background:none;border:1px solid var(--line);color:var(--text);font-size:1.4rem;border-radius:6px;padding:.1rem .65rem;cursor:pointer}
+
+/* hero */
+.hero{padding:4rem 0 3.5rem;background:radial-gradient(circle at 78% 40%,rgba(58,134,255,.18) 0,transparent 55%)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.hero h1{font-size:clamp(2.6rem,7.5vw,4.6rem);font-weight:700;letter-spacing:-.01em}
+.hero .role{color:var(--mint);font-family:var(--head);font-weight:500;font-size:1.3rem;margin:.7rem 0 1rem}
+.hero p.lead{color:var(--muted);max-width:33rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.btn{display:inline-block;padding:.7rem 1.4rem;font-weight:600;text-decoration:none;border:1px solid var(--mint);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+.btn.primary{background:var(--mint);color:#04140d}
+.btn.ghost{color:var(--mint)}
+.btn:hover{box-shadow:0 0 18px rgba(41,224,160,.45)}
+.energy{width:100%;max-width:500px;justify-self:center}
+.energy text{font-family:var(--head);font-size:13px;letter-spacing:.04em}
+
+/* about */
+.about p,.about .facts{max-width:46rem}
+.facts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.chip{border:1px solid var(--line);background:var(--panel);padding:.25rem .8rem;border-radius:4px;font-size:.92rem}
+
+/* timeline */
+.timeline{display:grid;gap:1rem}
+.item{padding:1.15rem 1.4rem;border-left:3px solid var(--mint)}
+.item.panel{border-left:3px solid var(--mint)}
+.item h3{font-size:1.2rem;font-weight:600}
+.meta{color:var(--wind);font-weight:500;font-size:.95rem;margin-top:.15rem}
+.item p{color:var(--muted);margin-top:.4rem}
+.sub{margin-top:2.5rem}
+.sub>h3{font-size:1.35rem;margin-bottom:1rem}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:1.3rem}
+.card{padding:1.3rem 1.4rem 1.4rem;border-top:3px solid var(--c,var(--mint));min-width:0;transition:box-shadow .2s}
+.card:hover{box-shadow:inset 0 0 40px rgba(255,255,255,.03)}
+.card h3{font-size:1.15rem;margin-bottom:.4rem;font-weight:600}
+.card p{color:var(--muted);font-size:1rem}
+.card.wind{--c:var(--wind)}.card.solar{--c:var(--solar)}.card.hydro{--c:var(--hydro)}.card.mint{--c:var(--mint)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
+.tags span{font-size:.82rem;color:var(--c,var(--mint));border:1px solid var(--line);border-radius:4px;padding:.1rem .55rem}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1.2rem}
+.skills .box{padding:1.2rem 1.3rem}
+.skills h3{margin-bottom:.8rem;font-size:1.1rem}
+.skills .tags{margin-top:0}
+
+/* contact: the word itself is the link */
+.contact{display:flex;flex-wrap:wrap;gap:1rem}
+.contact a{padding:.8rem 1.6rem;font-family:var(--head);font-weight:600;font-size:1.1rem;text-decoration:none;color:var(--text);background:var(--panel);border:1px solid var(--line);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+.contact a:hover{color:var(--mint);box-shadow:0 0 18px rgba(41,224,160,.35)}
+footer{padding:1.8rem 0;text-align:center;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (max-width:760px){
+  #menu{display:block}
+  nav ul{display:none;position:absolute;top:58px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line)}
+  nav ul.open{display:flex}
+  nav ul a{display:block;padding:.9rem 1.25rem}
+  .hero .wrap{grid-template-columns:1fr}
+  .energy{max-width:380px;order:-1}
+  section{padding:3.2rem 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a class="logo" href="#top">Ardan Kani</a>
+    <button id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+    <ul id="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Ardan Kani</h1>
+      <p class="role">Energy Systems Engineering student</p>
+      <p class="lead">I study wind power and renewable energy systems at Yaşar University, and I'm looking for hands-on experience in the renewable energy industry.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="#contact">Contact me</a>
+      </div>
+    </div>
+
+    <svg class="energy" viewBox="0 0 480 400" role="img" aria-label="Wind turbine, solar panels and hydropower dam">
+      <defs>
+        <g id="rotor"><path d="M0 0 L-5 -78 Q0 -90 5 -78 Z" fill="#4cc9f0"/><path d="M0 0 L-5 -78 Q0 -90 5 -78 Z" fill="#4cc9f0" transform="rotate(120)"/><path d="M0 0 L-5 -78 Q0 -90 5 -78 Z" fill="#4cc9f0" transform="rotate(240)"/><circle r="7" fill="#e8eef5"/></g>
+      </defs>
+      <!-- HUD frame -->
+      <path d="M8 40 V8 H40 M440 8 H472 V40 M472 360 V392 H440 M40 392 H8 V360" fill="none" stroke="#29e0a0" stroke-width="2"/>
+      <!-- sun -->
+      <g transform="translate(400 80)">
+        <g stroke="#ffb703" stroke-width="3" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
+          <path d="M0 -44 V-34 M0 44 V34 M-44 0 H-34 M44 0 H34 M31 -31 L24 -24 M-31 31 L-24 24 M31 31 L24 24 M-31 -31 L-24 -24"/></g>
+        <circle r="22" fill="#ffb703"/>
+      </g>
+      <!-- main turbine -->
+      <path d="M156 330 L164 330 L162 130 L158 130 Z" fill="#2a3b50" transform="translate(-0 0)"/>
+      <g transform="translate(160 130)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/><use href="#rotor"/></g></g>
+      <!-- small turbines -->
+      <g transform="translate(260 330) scale(.6)"><path d="M-4 0 L4 0 L2 -200 L-2 -200 Z" fill="#2a3b50"/><g transform="translate(0 -200)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="7s" repeatCount="indefinite"/><use href="#rotor"/></g></g></g>
+      <g transform="translate(60 330) scale(.5)"><path d="M-4 0 L4 0 L2 -200 L-2 -200 Z" fill="#2a3b50"/><g transform="translate(0 -200)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="9s" repeatCount="indefinite"/><use href="#rotor"/></g></g></g>
+      <text x="130" y="355" fill="#4cc9f0">WIND</text>
+      <!-- solar panels -->
+      <g fill="#0f2a55" stroke="#ffb703" stroke-width="1.5">
+        <path d="M330 300 L400 300 L412 266 L342 266 Z"/><path d="M335 300 V318 M395 300 V318"/>
+        <path d="M418 300 L458 300 L466 270 L426 270 Z"/>
+      </g>
+      <path d="M346 266 L336 300 M366 266 L360 300 M386 266 L384 300" stroke="#ffb703" stroke-width="1" opacity=".7"/>
+      <text x="340" y="345" fill="#ffb703">SOLAR</text>
+      <!-- hydro dam + water -->
+      <path d="M300 300 L330 300 L330 360 L300 360 Z" fill="#2a3b50" opacity="0"/>
+      <path d="M20 372 Q60 362 100 372 T180 372 T260 372 T340 372 T420 372 T500 372 V392 H20 Z" fill="#3a86ff" opacity=".85">
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="-80 0" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <text x="410" y="386" fill="#e8eef5" font-size="12">HYDRO</text>
+    </svg>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <h2>About</h2>
+    <p>I'm a third-year Energy Systems Engineering student at Yaşar University in Izmir, with a focus on renewable energy technologies, particularly wind power systems and sustainable engineering.</p>
+    <p>I use MATLAB-Simulink, Python, Autodesk Fusion 360, PVsyst and Engineering Equation Solver (EES) to model and analyse energy systems. I want to gain hands-on industry experience and contribute to projects at Nordex.</p>
+    <div class="facts">
+      <span class="chip">Izmir, Türkiye</span>
+      <span class="chip">GPA 3.23 / 4.00</span>
+      <span class="chip">Graduating June–July 2027</span>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="item panel">
+        <h3>B.Sc. Energy Systems Engineering</h3>
+        <div class="meta">Yaşar University, Izmir · Expected graduation June–July 2027</div>
+        <p>GPA: 3.23 / 4.00</p>
+      </div>
+      <div class="item panel">
+        <h3>Eraslan High School</h3>
+        <div class="meta">Izmir, Türkiye · 2019–2023</div>
+      </div>
+      <div class="item panel">
+        <h3>Doğa College Middle School</h3>
+        <div class="meta">Izmir, Türkiye · 2015–2019</div>
+      </div>
+    </div>
+    <div class="sub">
+      <h3>Training and seminars</h3>
+      <div class="timeline">
+        <div class="item panel">
+          <h3 style="font-size:1.1rem">Towards the 8th Izmir Wind Symposium: Economy, Technology, and the Future</h3>
+          <div class="meta">TMMOB · 29 November 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="item panel">
+        <h3>Intern, Training Department</h3>
+        <div class="meta">Nordex Enerji A.Ş., Çiğli, Izmir · June 2026 – July 2026</div>
+        <p>Summer internship at a wind turbine manufacturer, in the training department.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="grid">
+
+      <article class="card panel mint">
+        <h3>Smart Building Energy Management System with Predictive HVAC Control</h3>
+        <p>Senior capstone project (Sep 2026 – present). Developing predictive control strategies and optimizing the thermodynamic performance of building HVAC operation.</p>
+        <div class="tags"><span>HVAC</span><span>Predictive control</span><span>Capstone</span></div>
+      </article>
+
+      <article class="card panel solar">
+        <h3>Design of a Residential Air-Source Heat Pump</h3>
+        <p>ENGR 4132 group project. With a team, I designed a 10 kW R-290 air-to-water heat pump for Istanbul conditions: thermodynamic cycle modeling, evaporator and condenser sizing, and COP analysis in EES.</p>
+        <div class="tags"><span>EES</span><span>R-290</span><span>COP analysis</span></div>
+      </article>
+
+      <article class="card panel wind">
+        <h3>Wind Energy Systems Power Generation Analysis</h3>
+        <p>ESE 3260 group project. Calculated average power generation, Weibull parameters and capacity factors for small-scale wind turbines from hourly wind speed data, and evaluated performance for June in MATLAB.</p>
+        <div class="tags"><span>MATLAB</span><span>Weibull</span><span>Capacity factor</span></div>
+      </article>
+
+      <article class="card panel mint">
+        <h3>Renewable Energy System and Microgrid Modeling</h3>
+        <p>Academic group project with a 4-person team: designed microgrid schedules, horizontal axis wind turbine (HAWT) mechanics and solar PV layouts.</p>
+        <div class="tags"><span>Microgrid</span><span>HAWT</span><span>Solar PV</span></div>
+      </article>
+
+      <article class="card panel hydro">
+        <h3>Feedback Control System Optimization</h3>
+        <p>EEE 3718 project. Designed and simulated a lead compensator to improve settling time and overshoot, and visualized stability and step response in MATLAB and Simulink.</p>
+        <div class="tags"><span>MATLAB</span><span>Simulink</span><span>Control</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="box panel"><h3>Energy</h3><div class="tags"><span>Wind power</span><span>Solar</span><span>Hybrid systems</span><span>Energy efficiency</span><span>Sustainability</span></div></div>
+      <div class="box panel"><h3>Software and programming</h3><div class="tags"><span>MATLAB / Simulink</span><span>Python</span><span>Autodesk Fusion 360</span><span>PVsyst</span><span>EES</span><span>Microsoft Project</span><span>SketchUp</span></div></div>
+      <div class="box panel"><h3>Professional</h3><div class="tags"><span>Technical documentation</span><span>Project reporting</span><span>Teamwork</span><span>International collaboration</span><span>Problem solving</span></div></div>
+      <div class="box panel"><h3>Languages</h3><div class="tags"><span>Turkish (native)</span><span>English (advanced)</span><span>German (A2)</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <div class="contact">
+      <a href="mailto:ardan@armeks.com.tr">Email</a>
+      <a href="tel:+905303016797">Phone</a>
+      <a href="https://www.linkedin.com/in/ardan-kani-a7826a371" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Izmir%2C+T%C3%BCrkiye" target="_blank" rel="noopener">Location</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="yr"></span> Ardan Kani</footer>
+
+<script>
+const btn=document.getElementById('menu'),links=document.getElementById('links');
+btn.addEventListener('click',()=>{const o=links.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+links.addEventListener('click',()=>{links.classList.remove('open');btn.setAttribute('aria-expanded',false)});
+document.getElementById('yr').textContent=new Date().getFullYear();
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('animateTransform').forEach(a=>a.remove())}
+</script>
+</body>
+</html>
